@@ -4,21 +4,20 @@ using UnityEngine;
 
 public class CameraBehavior : MonoBehaviour
 {
-    // 1
+    // Offset for the camera
     public Vector3 CamOffset = new Vector3(0f, 1.2f, -2.6f);
-    // 2
+    // target variable
     private Transform _target;
     void Start()
     {
-        // 3
+        // lock onto the player
         _target = GameObject.Find("Player").transform;
     }
-    // 4
+
     void LateUpdate()
     {
-        // 5
+        //look at the player with the offset
         this.transform.position = _target.TransformPoint(CamOffset);
-        // 6
         this.transform.LookAt(_target);
     }
 }

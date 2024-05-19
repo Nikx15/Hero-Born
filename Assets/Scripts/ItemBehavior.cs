@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ItemBehavior : MonoBehaviour
 {
+    //Destroy item if we get it
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "Player")
